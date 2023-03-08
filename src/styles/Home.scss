@@ -1,0 +1,66 @@
+@import './vars';
+
+.home {
+  margin: 40px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .home__container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .home__h1 {
+      font-size: 25px;
+      width: 220px;
+      text-align: center;
+      border-bottom: 2px solid var(--color-secondary);
+    }
+
+    .home__layout {
+      display: flex;
+      gap: 15px;
+      overflow: auto;
+      scroll-behavior: smooth;
+
+      &::-webkit-scrollbar {
+        height: 5px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        background-color: var(--color-secondary);
+      }
+
+      .home__img {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        min-width: 300px;
+        transition: .5s;
+
+        img {
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .home {
+    .home__container {
+      .home__h1 {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .home__img:hover {
+    transition: .5s;
+    transform: scale(.98);
+  }
+}

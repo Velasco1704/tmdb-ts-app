@@ -1,4 +1,4 @@
-export interface TopRatedTV {
+export interface TV {
   backdrop_path: string;
   first_air_date: Date;
   genre_ids: number[];

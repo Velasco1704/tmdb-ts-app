@@ -25,7 +25,7 @@
       "@styles/*": ["src/styles/*"],
     }
   },
-  "include": ["src"],
+  "include": ["src", "src/interfaces/Movie.interface.ts"],
   "references": [{
     "path": "./tsconfig.node.json"
   }]

@@ -5,10 +5,8 @@ import {
   getTopRatedMovies,
   getTopRatedTV,
 } from "@api/index";
-import { PopularMovie } from "@interfaces/PopularMovies.interface";
-import { PopularTV } from "@interfaces/PopularTV.interface";
-import { TopRatedMovie } from "@interfaces/TopRatedMovies.interface";
-import { TopRatedTV } from "@interfaces/TopRatedTV.interface";
+import { Movie } from "@interfaces/Movie.interface";
+import { TV } from "@interfaces/TV.interface";
 
 const Context = createContext({});
 
@@ -24,15 +22,12 @@ export const MoviesContextProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [popularMovies, setPopularMovies] = useState<Array<PopularMovie>>([]);
-  const [topRatedMovies, setTopRatedMovies] = useState<Array<TopRatedMovie>>(
-    []
-  );
-  const [popularTV, setPopularTV] = useState<Array<PopularTV>>([]);
-  const [topRatedTV, setTopRatedTV] = useState<Array<TopRatedTV>>([]);
+  const [popularMovies, setPopularMovies] = useState<Array<Movie>>([]);
+  const [topRatedMovies, setTopRatedMovies] = useState<Array<Movie>>([]);
+  const [popularTV, setPopularTV] = useState<Array<TV>>([]);
+  const [topRatedTV, setTopRatedTV] = useState<Array<TV>>([]);
 
   const getAllMovies = () => {
-    1;
     getPopularMovies().then((res) => setPopularMovies(res));
     getTopRatedMovies().then((res) => setTopRatedMovies(res));
     getPopularTV().then((res) => setPopularTV(res));

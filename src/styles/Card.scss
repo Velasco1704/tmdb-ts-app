@@ -1,0 +1,20 @@
+.card {
+  z-index: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  min-width: 300px;
+  max-width: 400px;
+  transition: .5s;
+
+  .card__img {
+    border-radius: 5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card:hover {
+    transition: .5s;
+    transform: scale(.98);
+  }
+}

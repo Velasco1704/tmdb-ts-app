@@ -1,5 +1,6 @@
+import { Card } from "@components/Card";
 import { Movie } from "@interfaces/Movie.interface";
-import "@styles/Movies.scss";
+import "@styles/ListTitles.scss";
 
 export const Movies = ({
   popularMovies,
@@ -12,13 +13,17 @@ export const Movies = ({
 }) => {
   const movies = popularMovies.concat(topRatedMovies);
   return (
-    <div className="movies">
-      <h1 className="movies__h1">Movies</h1>
-      <div className="movies__layout">
-        {movies.map((movie) => (
-          <div className="movies__img" key={movie.id}>
-            <img src={`${URL_IMAGE}${movie.poster_path}`} alt={movie.title} />
-          </div>
+    <div className="listTitles">
+      <h1 className="listTitles__h1">Movies</h1>
+      <div className="listTitles__layout">
+        {movies.map((movie, index) => (
+          <Card
+            key={index}
+            URL_IMAGE={URL_IMAGE}
+            poster_path={movie.poster_path}
+            id={movie.id}
+            url={`/details-movie`}
+          />
         ))}
       </div>
     </div>

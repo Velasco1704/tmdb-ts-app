@@ -4,6 +4,7 @@ import { MoviesContextProvider } from "./context";
 import { BrowserRouter } from "react-router-dom";
 import "@styles/index.scss";
 
+
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <MoviesContextProvider>
     <BrowserRouter>

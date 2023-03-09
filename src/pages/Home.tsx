@@ -1,3 +1,4 @@
+import { Card } from "@components/Card";
 import { Movie } from "@interfaces/Movie.interface";
 import { TV } from "@interfaces/TV.interface";
 import "@styles/Home.scss";
@@ -21,12 +22,13 @@ export const Home = ({
         <h1 className="home__h1">Popular Movies</h1>
         <div className="home__layout">
           {popularMovies.map((movie) => (
-            <div key={movie.id} className="home__img">
-              <img
-                src={`${URL_IMAGE}${movie.poster_path}`}
-                title={movie.title}
-              />
-            </div>
+            <Card
+              key={movie.id}
+              URL_IMAGE={URL_IMAGE}
+              poster_path={movie.poster_path}
+              id={movie.id}
+              url={'details-movie'}
+            />
           ))}
         </div>
       </div>
@@ -34,38 +36,41 @@ export const Home = ({
         <h1 className="home__h1">Top Movies</h1>
         <div className="home__layout">
           {topRatedMovies.map((movie) => (
-            <div key={movie.id} className="home__img">
-              <img
-                src={`${URL_IMAGE}${movie.poster_path}`}
-                title={movie.title}
-              />
-            </div>
+            <Card
+              key={movie.id}
+              URL_IMAGE={URL_IMAGE}
+              poster_path={movie.poster_path}
+              id={movie.id}
+              url={'details-movie'}
+            />
           ))}
         </div>
       </div>
       <div className="home__container">
         <h1 className="home__h1">Popular TV</h1>
         <div className="home__layout">
-          {popularTV.map((movie) => (
-            <div key={movie.id} className="home__img">
-              <img
-                src={`${URL_IMAGE}${movie.poster_path}`}
-                title={movie.name}
-              />
-            </div>
+          {popularTV.map((tv) => (
+            <Card
+              key={tv.id}
+              URL_IMAGE={URL_IMAGE}
+              poster_path={tv.poster_path}
+              id={tv.id}
+              url={'details-tv'}
+            />
           ))}
         </div>
       </div>
       <div className="home__container">
         <h1 className="home__h1">Top TV</h1>
         <div className="home__layout">
-          {topRatedTV.map((movie) => (
-            <div key={movie.id} className="home__img">
-              <img
-                src={`${URL_IMAGE}${movie.poster_path}`}
-                title={movie.name}
-              />
-            </div>
+          {topRatedTV.map((tv) => (
+            <Card
+              key={tv.id}
+              URL_IMAGE={URL_IMAGE}
+              poster_path={tv.poster_path}
+              id={tv.id}
+              url={'details-tv'}
+            />
           ))}
         </div>
       </div>

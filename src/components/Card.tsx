@@ -1,11 +1,11 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import "@styles/Card.scss";
 
 export const Card = ({
   URL_IMAGE,
   poster_path,
   id,
-  url
+  url,
 }: {
   URL_IMAGE: string;
   poster_path: string;
@@ -13,17 +13,12 @@ export const Card = ({
   url: string;
 }) => {
   const navigate = useNavigate();
-  const handleDetails = () => {
-    navigate(`${url}/${id}`)
-    console.log(`${url}/${id}`)
-  };
-
   return (
-    <div onClick={handleDetails} className="card">
+    <div onClick={() => navigate(`${url}/${id}`)} className="card">
       <img
         className="card__img"
         src={`${URL_IMAGE}${poster_path}`}
-        alt="name of title"
+        alt="Image"
       />
     </div>
   );

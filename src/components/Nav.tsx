@@ -1,13 +1,19 @@
 import { NavLink } from "react-router-dom";
 import { BiMoviePlay } from "react-icons/bi";
+import { IoMdSearch } from "react-icons/io";
 import "@styles/Nav.scss";
 
 export const Nav = () => {
   return (
     <nav className="nav__container">
-      <NavLink className="nav__logo" to="/">
-        <BiMoviePlay />
-      </NavLink>
+      <div className="nav__div">
+        <NavLink className="nav__logo" to="/">
+          <BiMoviePlay />
+        </NavLink>
+        <NavLink className="nav__search" to="/search">
+          <IoMdSearch />
+        </NavLink>
+      </div>
       <ul className="nav__ul">
         <NavLink className="nav__navLink" to="/">
           {({ isActive }) => (

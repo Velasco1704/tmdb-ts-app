@@ -1,4 +1,3 @@
-import { Details } from "./Details.interface";
 import { Movie } from "./Movie.interface";
 import { TV } from "./TV.interface";
 

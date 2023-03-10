@@ -1,15 +1,16 @@
 import { useEffect } from "react";
-import { useContextMovies } from "./context";
-import { ContextMovie } from "@interfaces/Context.interface";
 import { Routes, Route } from "react-router-dom";
+import { useContextMovies } from "./context";
 import { Nav } from "@components/Nav";
 import { Home } from "@pages/Home";
 import { Movies } from "@pages/Movie";
 import { TV } from "@pages/TV";
 import { NotFound } from "@pages/NotFound";
-import "@styles/App.scss";
 import { DetailsMovie } from "@pages/DetailsMovie";
+import { Search } from "@pages/Search";
 import { DetailsTV } from "@pages/DetailsTV";
+import { ContextMovie } from "@interfaces/Context.interface";
+import "@styles/App.scss";
 
 export const App = () => {
   const URL_IMAGE = "https://image.tmdb.org/t/p/w500";
@@ -17,7 +18,7 @@ export const App = () => {
     useContextMovies() as ContextMovie;
   useEffect(() => {
     getAllMovies();
-  }, [!window.location.reload]);
+  }, []);
   return (
     <div className="app">
       <Nav />
@@ -34,6 +35,7 @@ export const App = () => {
             />
           }
         />
+        <Route path="/search" element={<Search URL_IMAGE={URL_IMAGE} />} />
         <Route
           path="/movies"
           element={
@@ -45,6 +47,10 @@ export const App = () => {
           }
         />
         <Route
+          path={"/movie/:id"}
+          element={<DetailsMovie URL_IMAGE={URL_IMAGE} />}
+        />
+        <Route
           path="/tv"
           element={
             <TV
@@ -54,11 +60,7 @@ export const App = () => {
             />
           }
         />
-        <Route
-          path={"/details-movie/:id"}
-          element={<DetailsMovie URL_IMAGE={URL_IMAGE} />}
-        />
-        <Route path={"/details-tv/:id"} element={<DetailsTV URL_IMAGE={URL_IMAGE} />} />
+        <Route path={"/tv/:id"} element={<DetailsTV URL_IMAGE={URL_IMAGE} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

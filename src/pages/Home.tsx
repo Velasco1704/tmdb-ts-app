@@ -1,4 +1,5 @@
 import { Card } from "@components/Card";
+import { Loader } from "@components/Loader";
 import { Movie } from "@interfaces/Movie.interface";
 import { TV } from "@interfaces/TV.interface";
 import "@styles/Home.scss";
@@ -16,6 +17,14 @@ export const Home = ({
   topRatedTV: Array<TV>;
   URL_IMAGE: string;
 }) => {
+  if (
+    popularMovies.length === 0 ||
+    topRatedMovies.length === 0 ||
+    popularTV.length === 0 ||
+    topRatedTV.length === 0
+  ) {
+    return <Loader />;
+  }
   return (
     <div className="home">
       <div className="home__container">
@@ -27,7 +36,7 @@ export const Home = ({
               URL_IMAGE={URL_IMAGE}
               poster_path={movie.poster_path}
               id={movie.id}
-              url={'details-movie'}
+              url={"/movie"}
             />
           ))}
         </div>
@@ -41,7 +50,7 @@ export const Home = ({
               URL_IMAGE={URL_IMAGE}
               poster_path={movie.poster_path}
               id={movie.id}
-              url={'details-movie'}
+              url={"/movie"}
             />
           ))}
         </div>
@@ -55,7 +64,7 @@ export const Home = ({
               URL_IMAGE={URL_IMAGE}
               poster_path={tv.poster_path}
               id={tv.id}
-              url={'details-tv'}
+              url={"/tv"}
             />
           ))}
         </div>
@@ -69,7 +78,7 @@ export const Home = ({
               URL_IMAGE={URL_IMAGE}
               poster_path={tv.poster_path}
               id={tv.id}
-              url={'details-tv'}
+              url={"/tv"}
             />
           ))}
         </div>

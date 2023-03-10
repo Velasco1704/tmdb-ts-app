@@ -74,11 +74,6 @@ q:after {
   content: none;
 }
 
-// ::selection {
-//   background-color: var(--negro);
-//   color: var(--blanco);
-// }
-
 form,
 input,
 textarea,
@@ -91,7 +86,6 @@ label {
   background-color: transparent;
   color: inherit;
   display: block;
-  /* (Opcional) */
   appearance: none;
 }
 

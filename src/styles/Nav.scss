@@ -12,9 +12,24 @@
   justify-content: space-between;
   align-items: center;
 
-  .nav__logo {
-    font-size: 30px;
-    color: var(--color-secondary);
+  .nav__div {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .nav__logo {
+      font-size: 30px;
+      color: var(--color-secondary);
+    }
+
+    .nav__search {
+      font-size: 20px;
+      color: var(--color-primary);
+      padding: 5px;
+      border-radius: 50%;
+      background-color: #242424;
+    }
   }
 
   .nav__ul {
@@ -43,15 +58,28 @@
   .nav__container {
     justify-content: space-around;
 
-    .nav__logo {
-      font-size: 40px;
+    .nav__div {
+      gap: 60px;
+
+      .nav__logo {
+        font-size: 40px;
+      }
+
+      .nav__search {
+        font-size: 25px;
+      }
     }
 
     .nav__span {
       font-size: 20px;
     }
-
   }
+}
 
-
+@media (min-width: 1440px) {
+  .nav__container {
+    .nav__div {
+      gap: 100px;
+    }
+  }
 }

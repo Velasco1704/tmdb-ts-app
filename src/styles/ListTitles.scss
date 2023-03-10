@@ -41,6 +41,9 @@
 
 @media (min-width: 1440px) {
   .listTitles {
+    listTitles__h1{
+      margin-left: 30px;
+    }
     .listTitles__layout {
       margin: 0 auto;
       grid-template-columns: repeat(4, 1fr);
